@@ -53,6 +53,13 @@ router.get('/reservations', function(req, res, next) {
 
 });
 
+router.post('/reservations', function(req, res, next) {
+
+  res.send(req.body);
+
+});
+
+
 router.get('/services', function(req, res, next) {
 
   res.render('services', {
