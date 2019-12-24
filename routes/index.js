@@ -32,11 +32,20 @@ router.get('/contacts', function(req, res, next) {
 
 router.get('/menus', function(req, res, next) {
 
-  res.render('menus', {
-    title: 'Restaurante Saboroso!',
-    background: 'images/img_bg_1.jpg',
-    h1: 'Saboreie nosso menu!'
-  }); 
+  conn.query("SELECT * FROM tb_menus ORDER BY title", (err, results) => {
+
+    if(err){
+     console.log(err);
+    }
+
+    res.render('index', { 
+      title: 'Restaurante Saboroso!',
+      menus: results ,
+      h1: 'Saboreie nosso menu!'
+    });
+  });
+
+  
 
 });
 
