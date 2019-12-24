@@ -1,22 +1,19 @@
 var conn = require('./../inc/db');
+var menus = require('./../inc/menus');
 var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  conn.query("SELECT * FROM tb_menus ORDER BY title", (err, results) => {
-
-    if(err){
-     console.log(err);
-    }
+  menus.getMenus().then(results => {
 
     res.render('index', { 
       title: 'Restaurante Saboroso!',
       menus: results 
-    });
+     });
 
-});
+  });
 
 });
 
