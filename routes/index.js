@@ -35,6 +35,7 @@ router.get('/menus', function(req, res, next) {
     res.render('index', { 
       title: 'Restaurante Saboroso!',
       menus: results ,
+      background: 'images/img_bg_1.jpg',
       h1: 'Saboreie nosso menu!'
     });
 
