@@ -8,6 +8,12 @@
                         <%= error%>
                     </div>
                     <%}%>
+
+                    <%if (typeof success === "string") {%>
+                    <div class="alert alert-success">
+                        <%= success%>
+                    </div>
+                    <%}%>
                     <h3>Reserva de mesa</h3>
                     <form action="/reservations" method="POST">
                         <div class="row form-group">
