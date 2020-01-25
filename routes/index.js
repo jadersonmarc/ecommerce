@@ -53,15 +53,15 @@ router.get('/reservations', function (req, res, next) {
 router.post('/reservations', function (req, res, next) {
 
   if (!req.body.name) {
-    res.send('digite o nome');
+    reservations.render(req, res, 'digite o nome');
   } else if (!req.body.email) {
-    res.send('digite o email');
+    reservations.render(req, res, 'digite o email');
   } else if (!req.body.people) {
-    res.send('selecione o numero de pessoas');
+    reservations.render(req, res, 'selecione o numero de pessoas');
   } else if (!req.body.date) {
-    res.send('selecione a data');
+    reservations.render(req, res, 'selecione a data');
   } else if (!req.body.time) {
-    res.send('selecione a horal');
+    reservations.render(req, res, 'selecione a hora');
   } else { }
 
 });
